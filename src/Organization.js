@@ -1,4 +1,5 @@
 import React from 'react';
+import NumberFormat from 'react-number-format';
 
 const Organization = props => {
     let salaryData = props.orgSalaries
@@ -6,7 +7,7 @@ const Organization = props => {
 
     return (
         <div className="org-column">
-            <h1>Organization</h1>
+            <h1>ORGANIZATION</h1>
             <div className="salary-table">
                 <table>
                     <tbody>
@@ -80,8 +81,8 @@ const Organization = props => {
                                     defaultValue={countData.arch} 
                                 />  
                            </td>
-                           <td>${((salaryData.arch * countData.arch)/52).toFixed(0)}</td>
-                           <td>${(salaryData.arch * countData.arch)}</td>
+                           <td><NumberFormat value={((salaryData.arch * countData.arch)/52).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={(salaryData.arch * countData.arch)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
                            <td>Developers</td>
@@ -93,8 +94,8 @@ const Organization = props => {
                                     defaultValue={countData.dev} 
                                 />   
                            </td>
-                           <td>${((salaryData.dev * countData.dev)/52).toFixed(0)}</td>
-                           <td>${salaryData.dev * countData.dev}</td>
+                           <td><NumberFormat value={((salaryData.dev * countData.dev)/52).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={salaryData.dev * countData.dev}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
                            <td>Testers</td>
@@ -106,8 +107,8 @@ const Organization = props => {
                                     defaultValue={countData.test} 
                                 /> 
                            </td>
-                           <td>${((salaryData.test * countData.test)/52).toFixed(0)}</td>
-                           <td>${salaryData.test * countData.test}</td>
+                           <td><NumberFormat value={((salaryData.test * countData.test)/52).toFixed(0)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={salaryData.test * countData.test} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
                            <td>Technical Writers</td>
@@ -119,14 +120,14 @@ const Organization = props => {
                                     defaultValue={countData.writer} 
                                 /> 
                            </td>
-                           <td>${((salaryData.writer * countData.writer)/52).toFixed(0)}</td>
-                           <td>${salaryData.writer * countData.writer}</td>
+                           <td><NumberFormat value={((salaryData.writer * countData.writer)/52).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={salaryData.writer * countData.writer}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr className="total-row">
                             <td>Total</td>
-                            <td>{countData.arch + countData.dev + countData.test + countData.writer}</td>
-                            <td>${(((salaryData.arch * countData.arch) + (salaryData.dev * countData.dev) + (salaryData.test * countData.test) + (salaryData.writer * countData.writer))/52).toFixed(0)}</td>
-                            <td>${(((salaryData.arch * countData.arch) + (salaryData.dev * countData.dev) + (salaryData.test * countData.test) + (salaryData.writer * countData.writer))).toFixed(0)}</td>
+                            <td><NumberFormat value={countData.arch + countData.dev + countData.test + countData.writer} displayType={'text'} thousandSeparator={true} /></td>
+                            <td><NumberFormat value={(((salaryData.arch * countData.arch) + (salaryData.dev * countData.dev) + (salaryData.test * countData.test) + (salaryData.writer * countData.writer))/52).toFixed(0)} displayType={"text"} thousandSeparator={true} prefix={'$'} /></td>
+                            <td><NumberFormat value={((salaryData.arch * countData.arch) + (salaryData.dev * countData.dev) + (salaryData.test * countData.test) + (salaryData.writer * countData.writer)).toFixed(0)} displayType={"text"} thousandSeparator={true} prefix={'$'} /></td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-header {
@@ -45,8 +46,12 @@
   background-color: #FFFFFF;
 }
 
-.savings-column {
+.project-column-container {
   width: 40%;
+}
+
+.savings-column {
+  width: 30%;
   background-color: palegreen;
 }
 
@@ -55,6 +60,14 @@
 }
 
 .org-column h1 {
+  margin: 0;
+}
+
+.project-column {
+  padding: 30px;
+}
+
+.project-column h1 {
   margin: 0;
 }
 
@@ -80,6 +93,7 @@
 
 .total-row td {
   border-top: 2px solid #85EA2D;
+  font-weight: bold;
 }
 
 td {

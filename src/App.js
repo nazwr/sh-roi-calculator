@@ -66,7 +66,7 @@ class App extends Component {
               handleSalaryChange = {this.handleSalaryChange}
             />
           </div>
-          <div className="config-column">
+          <div className="project-column-container">
             <Project />
           </div>
           <div className="savings-column">

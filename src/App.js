@@ -20,10 +20,17 @@ class App extends Component {
           dev: 10,
           test: 5,
           writer: 1
+        },
+        orgTime: {
+          arch: [10, 20, 10],
+          dev: [15, 20, 10],
+          test: [15, 20, 10],
+          writer: [15, 20, 10],
         }
       }
     this.handleCountChange = this.handleCountChange.bind(this)
     this.handleSalaryChange = this.handleSalaryChange.bind(this)
+    this.handleTimeChange = this.handleTimeChange.bind(this)
   }
 
   handleCountChange(event) {
@@ -35,9 +42,32 @@ class App extends Component {
 
   handleSalaryChange(event) {
     let updateState = this.state
-    
-    updateState["orgSalaries"][event.target.name] = parseInt(event.target.value)
-    this.setState(updateState)
+    let incomingValue = event.target.value
+
+    if (incomingValue !== "") {
+      incomingValue = incomingValue.split('$')[1].split(',').join('')
+      updateState["orgSalaries"][event.target.name] = parseInt(incomingValue)
+  
+      this.setState(updateState)
+    } else {
+      updateState["orgSalaries"][event.target.name] = 0
+  
+      this.setState(updateState)
+    }
+  }
+
+  handleTimeChange(event) {
+    let updateState = this.state
+    let incomingValue = (event.target.value.split("%")[0])
+    let incomingTarget = event.target.name.split("_")
+
+    if (incomingValue !== "") {
+      updateState["orgTime"][incomingTarget[0]][incomingTarget[1]] = parseInt(incomingValue)
+
+      this.setState(updateState)
+    } else {
+      updateState["orgTime"][incomingTarget[0]][incomingTarget[1]] = 0
+    }
   }
 
 
@@ -59,7 +89,7 @@ class App extends Component {
         </header>
         <div className="App-body">
           <div className="config-column">
-            <Organization 
+            <Organization
               orgSalaries = {this.state.orgSalaries}
               orgCount = {this.state.orgCount}
               handleCountChange = {this.handleCountChange}
@@ -67,7 +97,12 @@ class App extends Component {
             />
           </div>
           <div className="project-column-container">
-            <Project />
+            <Project 
+              orgSalaries = {this.state.orgSalaries}
+              orgCount = {this.state.orgCount}
+              orgTime = {this.state.orgTime}
+              handleTimeChange = {this.handleTimeChange}
+            />
           </div>
           <div className="savings-column">
             <Savings />

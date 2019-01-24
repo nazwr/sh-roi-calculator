@@ -17,10 +17,12 @@ const Organization = props => {
                         </tr>
                         <tr>
                            <td>Architect</td>
-                           <td>$
-                                <input 
-                                    name="arch" 
-                                    type="text" 
+                           <td>
+                                <NumberFormat 
+                                    name="arch"
+                                    isNumericString={true}
+                                    thousandSeparator={true}
+                                    prefix={'$'}
                                     onChange={props.handleSalaryChange} 
                                     defaultValue={salaryData.arch} 
                                 />  
@@ -28,35 +30,41 @@ const Organization = props => {
                         </tr>
                         <tr>
                            <td>Developer</td>
-                           <td>$
-                                <input 
-                                    name="dev" 
-                                    type="text" 
+                           <td>
+                                <NumberFormat 
+                                    name="dev"
+                                    isNumericString={true}
+                                    thousandSeparator={true}
+                                    prefix={'$'}
                                     onChange={props.handleSalaryChange} 
                                     defaultValue={salaryData.dev} 
-                                />
+                                /> 
                             </td>
                         </tr>
                         <tr>
                            <td>Tester</td>
-                           <td>$
-                                <input 
-                                    name="test" 
-                                    type="text" 
+                           <td>
+                                <NumberFormat 
+                                    name="test"
+                                    isNumericString={true}
+                                    thousandSeparator={true}
+                                    prefix={'$'}
                                     onChange={props.handleSalaryChange} 
                                     defaultValue={salaryData.test} 
-                                />
+                                /> 
                             </td>
                         </tr>
                         <tr>
                            <td>Technical Writer</td>
-                           <td>$
-                                <input 
-                                    name="writer" 
-                                    type="text" 
+                           <td>
+                                <NumberFormat 
+                                    name="writer"
+                                    isNumericString={true}
+                                    thousandSeparator={true}
+                                    prefix={'$'}
                                     onChange={props.handleSalaryChange} 
                                     defaultValue={salaryData.writer} 
-                                />
+                                /> 
                             </td>
                         </tr>
                     </tbody>
@@ -68,7 +76,7 @@ const Organization = props => {
                         <tr>
                             <th>Role</th>
                             <th>#</th>
-                            <th>Weekly Spend</th>
+                            <th>Spend / Sprint</th>
                             <th>Yearly Spend</th>
                         </tr>
                         <tr>
@@ -81,7 +89,7 @@ const Organization = props => {
                                     defaultValue={countData.arch} 
                                 />  
                            </td>
-                           <td><NumberFormat value={((salaryData.arch * countData.arch)/52).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={((salaryData.arch * countData.arch)/26).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                            <td><NumberFormat value={(salaryData.arch * countData.arch)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
@@ -94,7 +102,7 @@ const Organization = props => {
                                     defaultValue={countData.dev} 
                                 />   
                            </td>
-                           <td><NumberFormat value={((salaryData.dev * countData.dev)/52).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={((salaryData.dev * countData.dev)/26).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                            <td><NumberFormat value={salaryData.dev * countData.dev}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
@@ -107,7 +115,7 @@ const Organization = props => {
                                     defaultValue={countData.test} 
                                 /> 
                            </td>
-                           <td><NumberFormat value={((salaryData.test * countData.test)/52).toFixed(0)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={((salaryData.test * countData.test)/26).toFixed(0)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                            <td><NumberFormat value={salaryData.test * countData.test} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
@@ -120,7 +128,7 @@ const Organization = props => {
                                     defaultValue={countData.writer} 
                                 /> 
                            </td>
-                           <td><NumberFormat value={((salaryData.writer * countData.writer)/52).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                           <td><NumberFormat value={((salaryData.writer * countData.writer)/26).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                            <td><NumberFormat value={salaryData.writer * countData.writer}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr className="total-row">

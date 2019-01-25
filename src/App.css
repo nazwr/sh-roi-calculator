@@ -1,32 +1,202 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-container {
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  text-align: left;
+}
+
+.description {
+  text-align: right;
+  font-weight: normal;
+  font-size: 16px;
+  max-width: 50vw;
+}
+
+.App-logo {
+  /* height: 80%; */
+}
+
+.App-body {
+  width: 100vw;
+  max-height: 90vh;
+  position: absolute;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.config-column {
+  width: 30%;
+  /* border-right: 1px solid black; */
+  background-color: #FFFFFF;
+}
+
+.project-column-container {
+  width: 40%;
+  height: 100%;
+}
+
+.savings-column-container {
+  width: 30%;
+  height: 100%;
+  padding: 30px;
+}
+
+.savings-column {
+  width: 100%;
+}
+
+.org-column {
+  padding: 30px;
+}
+
+.org-column h1 {
+  margin: 0;
+}
+
+.project-column {
+  padding: 30px;
+  /* overflow-y: scroll; */
+}
+
+.project-column h1 {
+  margin: 0;
+}
+
+.savings-column h1 {
+  margin: 0;
+}
+
+.salary-table table {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.role-table table {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.total-row td {
+  border-top: 2px solid #85EA2D;
+  font-weight: bold;
+}
+
+td {
+  padding: 10px;
+  /* text-align: left; */
+}
+
+th {
+  padding: 10px;
+  border-bottom: 2px solid #85EA2D;
+}
+
+input {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-left: 5px;
+  max-width: 75px;
+  text-align: center;
+  letter-spacing: .1em;
+}
+
+.project-table table {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.project-table td:nth-child(2) {
+  border-left: 1px solid #49515f;
+}
+
+.project-table td:nth-child(4) {
+  border-left: 1px solid #49515f;
+}
+
+.sub-head {
+  font-size: 11px;
+}
+
+.header-row td {
+  border-bottom: 2px solid #85EA2D;
+  font-weight: bold;
+  text-align: left;
+}
+
+.task-column {
+  width: 30%;
+}
+
+.with-swaggerhub {
+  /* background-color: #adf173; */
+  color: #85EA2D;
+  
+}
+
+.task-desc {
+  font-size: 11px;
+  text-align: left;
+}
+
+.savings-table table {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.savings-calc-button {
+  width: 40%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #85EA2D;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.savings-calc-button:hover {
+  cursor: pointer;
+}
+
+.savings-calc-button:active {
+  box-shadow: none;
 }

@@ -1,18 +1,45 @@
 import React from 'react';
+import NumberFormat from 'react-number-format';
+
 
 const Savings = props => {
-    let sprintSavings = 0
-
-    Array.from(document.getElementsByClassName("sprint")).forEach(function(saving) {
-       let formattedNum = saving.outerText.split("$").join("").split(",").join("")
-       sprintSavings += parseInt(formattedNum)
-    //    Needs to update state, not render in const
-    });
+    let sprintSavings = props.savingsAmounts.perSprint
+    let yearSavings = props.savingsAmounts.perYear
 
     return (
         <div className="savings-column">
-            <h1>Savings</h1>
-            <h3>Sprint Savings: {sprintSavings}</h3>
+            <h1>SAVINGS</h1>
+            <div className="savings-table">
+                <table>
+                    <tbody>
+                        <tr>
+                           <td>Sprint Savings</td>
+                           <td className="with-swaggerhub">
+                                <NumberFormat 
+                                    value={sprintSavings}  
+                                    displayType={'text'} 
+                                    thousandSeparator={true} 
+                                    prefix={'$'}
+                                />
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Yearly Savings</td>
+                           <td className="with-swaggerhub">
+                                <NumberFormat 
+                                    value={yearSavings}  
+                                    displayType={'text'} 
+                                    thousandSeparator={true} 
+                                    prefix={'$'}
+                                />
+                           </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div className="savings-calc-button" onClick={props.handleSavingsCalc}>Calculate Savings</div>
+            </div>
         </div>
     )
 }

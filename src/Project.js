@@ -70,7 +70,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('arch', 0, .25)}  
                                     displayType={'text'} 
@@ -108,7 +108,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('arch', 1, .5)}  
                                     displayType={'text'} 
@@ -138,7 +138,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">30%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('arch', 2, .3)}  
                                     displayType={'text'} 
@@ -146,7 +146,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('arch', 2, .3)}  
                                     displayType={'text'} 
@@ -180,7 +180,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">25%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('dev', 0, .25)}  
                                     displayType={'text'} 
@@ -188,7 +188,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('dev', 0, .25)}  
                                     displayType={'text'} 
@@ -218,7 +218,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">80%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('dev', 1, .8)}  
                                     displayType={'text'} 
@@ -226,7 +226,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('dev', 1, .8)}  
                                     displayType={'text'} 
@@ -256,7 +256,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">60%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('dev', 2, .6)}  
                                     displayType={'text'} 
@@ -264,7 +264,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('dev', 2, .6)}  
                                     displayType={'text'} 
@@ -298,7 +298,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">60%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('test', 0, .6)}  
                                     displayType={'text'} 
@@ -306,7 +306,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('test', 0, .6)}  
                                     displayType={'text'} 
@@ -336,7 +336,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">75%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('test', 1, .75)}  
                                     displayType={'text'} 
@@ -344,7 +344,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('test', 1, .75)}  
                                     displayType={'text'} 
@@ -374,7 +374,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">15%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('test', 2, .15)}  
                                     displayType={'text'} 
@@ -382,7 +382,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('test', 2, .15)}  
                                     displayType={'text'} 
@@ -416,7 +416,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">80%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('writer', 0, .8)}  
                                     displayType={'text'} 
@@ -424,7 +424,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('writer', 0, .8)}  
                                     displayType={'text'} 
@@ -454,7 +454,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">40%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('writer', 1, .4)}  
                                     displayType={'text'} 
@@ -462,7 +462,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('writer', 1, .4)}  
                                     displayType={'text'} 
@@ -492,7 +492,7 @@ const Project = props => {
                                 />
                             </td>
                             <td className="with-swaggerhub">50%</td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub sprint">
                                 <NumberFormat 
                                     value={sprintSavingsCalc('writer', 2, .5)}  
                                     displayType={'text'} 
@@ -500,7 +500,7 @@ const Project = props => {
                                     prefix={'$'}
                                 />
                             </td>
-                            <td className="with-swaggerhub">
+                            <td className="with-swaggerhub year">
                                 <NumberFormat 
                                     value={yearSavingsCalc('writer', 2, .5)}  
                                     displayType={'text'} 

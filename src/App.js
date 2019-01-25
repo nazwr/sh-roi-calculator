@@ -26,17 +26,46 @@ class App extends Component {
           dev: [15, 20, 10],
           test: [15, 20, 10],
           writer: [15, 20, 10],
+        },
+        savingsAmounts: {
+          perSprint: 0,
+          perYear: 0
         }
       }
     this.handleCountChange = this.handleCountChange.bind(this)
     this.handleSalaryChange = this.handleSalaryChange.bind(this)
     this.handleTimeChange = this.handleTimeChange.bind(this)
+    this.handleSavingsCalc  = this.handleSavingsCalc.bind(this)
+  }
+
+  handleSavingsCalc(event) {
+    let updateState = this.state
+    let sprintSavings = 0;
+    let yearSavings = 0;
+
+    Array.from(document.getElementsByClassName("sprint")).forEach(function(saving) {
+      let formattedNum = saving.outerText.split("$").join("").split(",").join("")
+
+      sprintSavings += parseInt(formattedNum)
+    });
+
+    Array.from(document.getElementsByClassName("year")).forEach(function(saving) {
+      let formattedNum = saving.outerText.split("$").join("").split(",").join("")
+
+      yearSavings += parseInt(formattedNum)
+    });
+
+    updateState["savingsAmounts"]["perSprint"] = sprintSavings
+    updateState["savingsAmounts"]["perYear"] = yearSavings
+
+    this.setState(updateState);
   }
 
   handleCountChange(event) {
     let updateState = this.state
 
     updateState["orgCount"][event.target.name] = parseInt(event.target.value)
+
     this.setState(updateState)
   }
 
@@ -58,6 +87,7 @@ class App extends Component {
 
   handleTimeChange(event) {
     let updateState = this.state
+    
     let incomingValue = (event.target.value.split("%")[0])
     let incomingTarget = event.target.name.split("_")
 
@@ -104,8 +134,11 @@ class App extends Component {
               handleTimeChange = {this.handleTimeChange}
             />
           </div>
-          <div className="savings-column">
-            <Savings />
+          <div className="savings-column-container">
+            <Savings 
+              savingsAmounts = {this.state.savingsAmounts}
+              handleSavingsCalc = {this.handleSavingsCalc}
+            />
           </div>
         </div>
       </div>

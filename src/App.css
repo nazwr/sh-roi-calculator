@@ -52,9 +52,14 @@
   height: 100%;
 }
 
-.savings-column {
+.savings-column-container {
   width: 30%;
-  background-color: palegreen;
+  height: 100%;
+  padding: 30px;
+}
+
+.savings-column {
+  width: 100%;
 }
 
 .org-column {
@@ -71,6 +76,10 @@
 }
 
 .project-column h1 {
+  margin: 0;
+}
+
+.savings-column h1 {
   margin: 0;
 }
 
@@ -162,4 +171,32 @@ input {
 .task-desc {
   font-size: 11px;
   text-align: left;
+}
+
+.savings-table table {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.savings-calc-button {
+  width: 40%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #85EA2D;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.savings-calc-button:hover {
+  cursor: pointer;
+}
+
+.savings-calc-button:active {
+  box-shadow: none;
 }

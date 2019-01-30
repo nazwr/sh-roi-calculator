@@ -4,29 +4,15 @@ import './App.css';
 import Organization from './Organization.js';
 import Project from './Project.js';
 import Savings from './Savings.js';
+import CalculatorData from './calculator_data.json'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        orgSalaries: {
-            arch: 105000,
-            dev: 95000,
-            test: 75000,
-            writer: 65000
-          },
-        orgCount: {
-          arch: 5,
-          dev: 10,
-          test: 5,
-          writer: 1
-        },
-        orgTime: {
-          arch: [10, 20, 10],
-          dev: [15, 20, 10],
-          test: [15, 20, 10],
-          writer: [15, 20, 10],
-        },
+        orgSalaries: {},
+        orgCount: {},
+        orgTime: {},
         savingsAmounts: {
           perSprint: 0,
           perYear: 0
@@ -36,6 +22,24 @@ class App extends Component {
     this.handleSalaryChange = this.handleSalaryChange.bind(this)
     this.handleTimeChange = this.handleTimeChange.bind(this)
     this.handleSavingsCalc  = this.handleSavingsCalc.bind(this)
+  }
+
+  componentWillMount() {
+    let defaultState = this.state
+
+    for (let i = 0; i < CalculatorData.roles.length; i++) {
+      let currentObject = CalculatorData.roles[i]
+      
+      defaultState.orgCount[currentObject.lookupName] = currentObject.defaultCount
+      defaultState.orgSalaries[currentObject.lookupName] = currentObject.defaultSalary
+      defaultState.orgTime[currentObject.lookupName] = []
+      
+      for (let n = 0; n < currentObject.jobs.length; n++) {
+        defaultState.orgTime[currentObject.lookupName].push(currentObject.jobs[n].defaultTime)
+      }
+    }
+
+    this.setState(defaultState)
   }
 
   handleSavingsCalc(event) {
@@ -122,6 +126,7 @@ class App extends Component {
             <Organization
               orgSalaries = {this.state.orgSalaries}
               orgCount = {this.state.orgCount}
+              calculatorData = {CalculatorData}
               handleCountChange = {this.handleCountChange}
               handleSalaryChange = {this.handleSalaryChange}
             />
@@ -131,6 +136,7 @@ class App extends Component {
               orgSalaries = {this.state.orgSalaries}
               orgCount = {this.state.orgCount}
               orgTime = {this.state.orgTime}
+              calculatorData = {CalculatorData}
               handleTimeChange = {this.handleTimeChange}
             />
           </div>

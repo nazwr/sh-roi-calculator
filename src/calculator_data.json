@@ -1,0 +1,96 @@
+{
+    "roles": [
+        {
+            "displayName": "Architect",
+            "lookupName": "arch",
+            "defaultSalary": 105000,
+            "defaultCount": 10,
+            "jobs": [
+                {
+                    "description": "Designing new APIs and versions",
+                    "defaultTime": 10,
+                    "timeReductionPercent": 25
+                },
+                {
+                    "description": "Ensuring a design conforms to company standards",
+                    "defaultTime": 20,
+                    "timeReductionPercent": 50
+                },
+                {
+                    "description": "Getting feedback on whether the design of an API will be problematic",
+                    "defaultTime": 10,
+                    "timeReductionPercent": 30
+                }
+            ]
+        },
+        {
+            "displayName": "Developer",
+            "lookupName": "dev",
+            "defaultSalary": 95000,
+            "defaultCount": 8,
+            "jobs": [
+                {
+                    "description": "Reaching an agreement on a proposed API change",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 25
+                },
+                {
+                    "description": "Developing SDKs for client integrations",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 50
+                },
+                {
+                    "description": "Configuring development environments for new APIs or changes",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 30
+                }
+            ]
+        },
+        {
+            "displayName": "Tester",
+            "lookupName": "test",
+            "defaultSalary": 105000,
+            "defaultCount": 10,
+            "jobs": [
+                {
+                    "description": "Getting requirements for upcoming changes to an API",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 25
+                },
+                {
+                    "description": "Waiting for a test environment to be shared",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 50
+                },
+                {
+                    "description": "Updating previous tests as requirements change",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 30
+                }
+            ]
+        },
+        {
+            "displayName": "Technical Writer",
+            "lookupName": "writer",
+            "defaultSalary": 105000,
+            "defaultCount": 10,
+            "jobs": [
+                {
+                    "description": "Creating documentation to match new APIs and versions",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 25
+                },
+                {
+                    "description": "Validating previous documentation matches upcoming changes",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 50
+                },
+                {
+                    "description": "Making sure documentation is published and shared when a new version goes to production",
+                    "defaultTime": 30,
+                    "timeReductionPercent": 30
+                }
+            ]
+        }
+    ]
+}

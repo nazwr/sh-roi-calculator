@@ -40,6 +40,9 @@ const Savings = props => {
             <div>
                 <div className="savings-calc-button" onClick={props.handleSavingsCalc}>Calculate Savings</div>
             </div>
+            <div>
+                <h3>Based on the information about your team, we suggest looking at our _______ plan</h3>
+            </div>
         </div>
     )
 }

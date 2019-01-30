@@ -1,9 +1,69 @@
 import React from 'react';
-import NumberFormat from 'react-number-format';
+import Number from './Number.js'
 
 const Organization = props => {
     let salaryData = props.orgSalaries
     let countData = props.orgCount
+
+    let roleTableData = props.calculatorData.roles
+
+    let salaryOutput = []
+    let countOutput = []
+    let totalCount = 0
+    let totalYear = 0
+
+    for (let i = 0; i < roleTableData.length; i++) {
+        let currentObj = roleTableData[i]
+        let salaryRow = 
+            <tr key={"sr-" + i}>
+                <td>{currentObj.displayName}</td>
+                <td>
+                    <Number 
+                        type="input"
+                        symbol="$"
+                        lookupName={currentObj.lookupName}
+                        onChange={props.handleSalaryChange}
+                        defaultValue={salaryData[currentObj.lookupName]}
+                    />
+                </td>
+            </tr>
+
+        let countRow = 
+            <tr key={"cr-" + i}>
+                <td>{currentObj.displayName}</td>
+                <td>
+                    <Number 
+                        type="input"
+                        lookupName={currentObj.lookupName}
+                        onChange={props.handleCountChange}
+                        defaultValue={countData[currentObj.lookupName]}
+                    />
+                </td>
+                <td>
+                    <Number 
+                        value={((salaryData[currentObj.lookupName] * countData[currentObj.lookupName])/26).toFixed(0)}
+                        symbol="$"
+                    />
+                </td>
+                <td>
+                    <Number 
+                        value={((salaryData[currentObj.lookupName] * countData[currentObj.lookupName])).toFixed(0)}
+                        symbol="$"
+                    />
+                </td>
+            </tr>
+
+        salaryOutput.push(salaryRow)
+        countOutput.push(countRow)
+    }
+
+    for (let n = 0; n < roleTableData.length; n++) {
+        let currentCount = countData[roleTableData[n].lookupName]
+        let currentSalary = (salaryData[roleTableData[n].lookupName] * currentCount)
+        
+        totalCount += currentCount
+        totalYear += currentSalary
+    }
 
     return (
         <div className="org-column">
@@ -15,58 +75,7 @@ const Organization = props => {
                             <th>Role</th>
                             <th>Yearly Salary</th>
                         </tr>
-                        <tr>
-                           <td>Architect</td>
-                           <td>
-                                <NumberFormat 
-                                    name="arch"
-                                    isNumericString={true}
-                                    thousandSeparator={true}
-                                    prefix={'$'}
-                                    onChange={props.handleSalaryChange} 
-                                    defaultValue={salaryData.arch} 
-                                />  
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>Developer</td>
-                           <td>
-                                <NumberFormat 
-                                    name="dev"
-                                    isNumericString={true}
-                                    thousandSeparator={true}
-                                    prefix={'$'}
-                                    onChange={props.handleSalaryChange} 
-                                    defaultValue={salaryData.dev} 
-                                /> 
-                            </td>
-                        </tr>
-                        <tr>
-                           <td>Tester</td>
-                           <td>
-                                <NumberFormat 
-                                    name="test"
-                                    isNumericString={true}
-                                    thousandSeparator={true}
-                                    prefix={'$'}
-                                    onChange={props.handleSalaryChange} 
-                                    defaultValue={salaryData.test} 
-                                /> 
-                            </td>
-                        </tr>
-                        <tr>
-                           <td>Technical Writer</td>
-                           <td>
-                                <NumberFormat 
-                                    name="writer"
-                                    isNumericString={true}
-                                    thousandSeparator={true}
-                                    prefix={'$'}
-                                    onChange={props.handleSalaryChange} 
-                                    defaultValue={salaryData.writer} 
-                                /> 
-                            </td>
-                        </tr>
+                        {salaryOutput}
                     </tbody>
                 </table>
             </div>
@@ -79,63 +88,32 @@ const Organization = props => {
                             <th>Spend / Sprint</th>
                             <th>Yearly Spend</th>
                         </tr>
-                        <tr>
-                           <td>Architects</td>
-                           <td>
-                               <input 
-                                    name="arch" 
-                                    type="text" 
-                                    onChange={props.handleCountChange} 
-                                    defaultValue={countData.arch} 
-                                />  
-                           </td>
-                           <td><NumberFormat value={((salaryData.arch * countData.arch)/26).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                           <td><NumberFormat value={(salaryData.arch * countData.arch)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                        </tr>
-                        <tr>
-                           <td>Developers</td>
-                           <td>
-                               <input 
-                                    name="dev" 
-                                    type="text" 
-                                    onChange={props.handleCountChange} 
-                                    defaultValue={countData.dev} 
-                                />   
-                           </td>
-                           <td><NumberFormat value={((salaryData.dev * countData.dev)/26).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                           <td><NumberFormat value={salaryData.dev * countData.dev}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                        </tr>
-                        <tr>
-                           <td>Testers</td>
-                           <td>
-                                <input 
-                                    name="test" 
-                                    type="text" 
-                                    onChange={props.handleCountChange} 
-                                    defaultValue={countData.test} 
-                                /> 
-                           </td>
-                           <td><NumberFormat value={((salaryData.test * countData.test)/26).toFixed(0)} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                           <td><NumberFormat value={salaryData.test * countData.test} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                        </tr>
-                        <tr>
-                           <td>Technical Writers</td>
-                           <td>
-                                <input 
-                                    name="writer" 
-                                    type="text" 
-                                    onChange={props.handleCountChange} 
-                                    defaultValue={countData.writer} 
-                                /> 
-                           </td>
-                           <td><NumberFormat value={((salaryData.writer * countData.writer)/26).toFixed(0)}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                           <td><NumberFormat value={salaryData.writer * countData.writer}  displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
-                        </tr>
+                        {countOutput}
                         <tr className="total-row">
                             <td>Total</td>
-                            <td><NumberFormat value={countData.arch + countData.dev + countData.test + countData.writer} displayType={'text'} thousandSeparator={true} /></td>
-                            <td><NumberFormat value={(((salaryData.arch * countData.arch) + (salaryData.dev * countData.dev) + (salaryData.test * countData.test) + (salaryData.writer * countData.writer))/52).toFixed(0)} displayType={"text"} thousandSeparator={true} prefix={'$'} /></td>
-                            <td><NumberFormat value={((salaryData.arch * countData.arch) + (salaryData.dev * countData.dev) + (salaryData.test * countData.test) + (salaryData.writer * countData.writer)).toFixed(0)} displayType={"text"} thousandSeparator={true} prefix={'$'} /></td>
+                            <td>
+                                <Number
+                                    value={totalCount} 
+                                    displayType={'text'} 
+                                    thousandSeparator={true} 
+                                />
+                            </td>
+                            <td>
+                                <Number 
+                                    value={(totalYear/52).toFixed(0)} 
+                                    displayType={"text"} 
+                                    thousandSeparator={true} 
+                                    prefix={'$'} 
+                                />
+                            </td>
+                            <td>
+                                <Number
+                                    value={(totalYear)} 
+                                    displayType={"text"} 
+                                    thousandSeparator={true} 
+                                    prefix={'$'} 
+                                />
+                            </td>
                         </tr>
                     </tbody>
                 </table>

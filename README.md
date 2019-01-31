@@ -1,6 +1,6 @@
 # ROI Calculator Template
 
-# DEMO: https://sh-roi-calc.netlify.com
+## DEMO: https://sh-roi-calc.netlify.com
 
 ## Setup
 

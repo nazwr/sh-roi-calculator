@@ -4,20 +4,23 @@
             "displayName": "Architect",
             "lookupName": "arch",
             "defaultSalary": 105000,
-            "defaultCount": 10,
+            "defaultCount": 5,
             "jobs": [
                 {
                     "description": "Designing new APIs and versions",
+                    "infoLink": "https://app.swaggerhub.com/help/ui/editor",
                     "defaultTime": 10,
                     "timeReductionPercent": 25
                 },
                 {
                     "description": "Ensuring a design conforms to company standards",
+                    "infoLink": "https://app.swaggerhub.com/help/organizations/api-standardization",
                     "defaultTime": 20,
                     "timeReductionPercent": 50
                 },
                 {
                     "description": "Getting feedback on whether the design of an API will be problematic",
+                    "infoLink": "https://app.swaggerhub.com/help/collaboration/comments",
                     "defaultTime": 10,
                     "timeReductionPercent": 30
                 }
@@ -27,20 +30,23 @@
             "displayName": "Developer",
             "lookupName": "dev",
             "defaultSalary": 95000,
-            "defaultCount": 8,
+            "defaultCount": 10,
             "jobs": [
                 {
                     "description": "Reaching an agreement on a proposed API change",
+                    "infoLink": "https://app.swaggerhub.com/help/collaboration/comments",
                     "defaultTime": 30,
                     "timeReductionPercent": 25
                 },
                 {
                     "description": "Developing SDKs for client integrations",
+                    "infoLink": "https://app.swaggerhub.com/help/apis/generating-code/client-sdk",
                     "defaultTime": 30,
                     "timeReductionPercent": 50
                 },
                 {
                     "description": "Configuring development environments for new APIs or changes",
+                    "infoLink": "https://app.swaggerhub.com/help/apis/generating-code/server-stub",
                     "defaultTime": 30,
                     "timeReductionPercent": 30
                 }
@@ -49,21 +55,24 @@
         {
             "displayName": "Tester",
             "lookupName": "test",
-            "defaultSalary": 105000,
-            "defaultCount": 10,
+            "defaultSalary": 75000,
+            "defaultCount": 5,
             "jobs": [
                 {
                     "description": "Getting requirements for upcoming changes to an API",
+                    "infoLink": "https://app.swaggerhub.com/help/collaboration/comments",
                     "defaultTime": 30,
                     "timeReductionPercent": 25
                 },
                 {
                     "description": "Waiting for a test environment to be shared",
+                    "infoLink": "https://app.swaggerhub.com/help/integrations/api-auto-mocking",
                     "defaultTime": 30,
                     "timeReductionPercent": 50
                 },
                 {
                     "description": "Updating previous tests as requirements change",
+                    "infoLink": "https://support.smartbear.com/readyapi/docs/integrations/swagger.html",
                     "defaultTime": 30,
                     "timeReductionPercent": 30
                 }
@@ -72,21 +81,24 @@
         {
             "displayName": "Technical Writer",
             "lookupName": "writer",
-            "defaultSalary": 105000,
-            "defaultCount": 10,
+            "defaultSalary": 65000,
+            "defaultCount": 3,
             "jobs": [
                 {
                     "description": "Creating documentation to match new APIs and versions",
+                    "infoLink": "https://app.swaggerhub.com/help/ui/interactive-documentation",
                     "defaultTime": 30,
                     "timeReductionPercent": 25
                 },
                 {
                     "description": "Validating previous documentation matches upcoming changes",
+                    "infoLink": "https://app.swaggerhub.com/help/apis/compare-and-merge",
                     "defaultTime": 30,
                     "timeReductionPercent": 50
                 },
                 {
                     "description": "Making sure documentation is published and shared when a new version goes to production",
+                    "infoLink": "https://app.swaggerhub.com/help/apis/publishing-api",
                     "defaultTime": 30,
                     "timeReductionPercent": 30
                 }

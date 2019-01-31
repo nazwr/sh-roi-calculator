@@ -22,7 +22,7 @@ const Project = props => {
 
     for (let i = 0; i < projectTableData.length; i++) {
         let currentObj = projectTableData[i]
-        let roleTitle = <tr className="header-row"><td colSpan="6"><b>{currentObj.displayName}</b></td></tr>
+        let roleTitle = <tr className="header-row"><td colSpan="7"><b>{currentObj.displayName + "s"}</b></td></tr>
 
         projectOutput.push(roleTitle)
 
@@ -30,6 +30,7 @@ const Project = props => {
             let jobRow = 
                 <tr key={"jr-" + i + "_" + n}>
                     <td className="task-desc">{currentObj.jobs[n].description}</td>
+                    
                     <td>
                         <Number 
                             type="input"
@@ -63,6 +64,7 @@ const Project = props => {
                             symbol="$"
                         />
                     </td>
+                    <td className="more-info-icon"><a target="_blank" href={currentObj.jobs[n].infoLink} rel="noopener noreferrer"><i class="far fa-question-circle"></i></a></td>
                 </tr>
 
             projectOutput.push(jobRow)
@@ -80,7 +82,7 @@ const Project = props => {
                         <tr>
                             <th className="task-column"></th>
                             <th colSpan="2">Present</th>
-                            <th colSpan="3" className="with-swaggerhub">With Swaggerhub</th>
+                            <th colSpan="4" className="with-swaggerhub full-block">With Swaggerhub</th>
                         </tr>
                         <tr>
                             <td></td>
@@ -89,6 +91,7 @@ const Project = props => {
                             <td className="with-swaggerhub sub-head">% Time Reduction</td>
                             <td className="with-swaggerhub sub-head">Sprint Savings</td>
                             <td className="with-swaggerhub sub-head">Yearly Savings</td>
+                            <td className="with-swaggerhub sub-head">Info</td>
                         </tr>
                         {projectOutput}
                     </tbody>

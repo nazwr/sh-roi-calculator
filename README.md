@@ -1,5 +1,7 @@
 # ROI Calculator Template
 
+# DEMO: https://sh-roi-calc.netlify.com
+
 ## Setup
 
 - npm install

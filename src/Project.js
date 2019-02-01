@@ -64,7 +64,12 @@ const Project = props => {
                             symbol="$"
                         />
                     </td>
-                    <td className="more-info-icon"><a target="_blank" href={currentObj.jobs[n].infoLink} rel="noopener noreferrer"><i class="far fa-question-circle"></i></a></td>
+                    <td className="more-info-icon">
+                        <span className="tip-text">{currentObj.jobs[n].toolTip}</span>
+                        <a target="_blank" href={currentObj.jobs[n].infoLink} rel="noopener noreferrer">
+                            <i className="far fa-question-circle"></i>
+                        </a>
+                    </td>
                 </tr>
 
             projectOutput.push(jobRow)

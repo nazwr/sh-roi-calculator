@@ -44,7 +44,6 @@
 
 .config-column {
   width: 30%;
-  /* border-right: 1px solid black; */
   background-color: #FFFFFF;
 }
 
@@ -114,7 +113,6 @@
 
 td {
   padding: 10px;
-  /* text-align: left; */
 }
 
 th {
@@ -223,4 +221,39 @@ input {
 
 .savings-calc-button:active {
   box-shadow: none;
+}
+
+.more-info-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.more-info-icon .tip-text {
+  visibility: hidden;
+  width: 180px;
+  background-color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  color: black;
+  position: absolute;
+  z-index: 1;
+  top: -3px;
+  right: 115%;
+  font-size: 11px;
+}
+
+.more-info-icon:hover .tip-text {
+  visibility: visible;
+}
+
+.more-info-icon .tip-text::after {
+  content: " ";
+  position: absolute;
+  top: 15%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
 }

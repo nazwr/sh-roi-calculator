@@ -232,7 +232,7 @@ input {
   visibility: hidden;
   width: 180px;
   background-color: white;
-  text-align: center;
+  text-align: right;
   border-radius: 6px;
   padding: 10px;
   color: black;

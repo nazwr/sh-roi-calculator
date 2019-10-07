@@ -103,7 +103,7 @@ const Organization = props => {
                                     value={(totalYear/52).toFixed(0)} 
                                     displayType={"text"} 
                                     thousandSeparator={true} 
-                                    prefix={'$'} 
+                                    symbol={'$'} 
                                 />
                             </td>
                             <td>
@@ -111,7 +111,7 @@ const Organization = props => {
                                     value={(totalYear)} 
                                     displayType={"text"} 
                                     thousandSeparator={true} 
-                                    prefix={'$'} 
+                                    symbol={'$'} 
                                 />
                             </td>
                         </tr>

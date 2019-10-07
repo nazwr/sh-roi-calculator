@@ -5,7 +5,6 @@ import NumberFormat from 'react-number-format';
 const Savings = props => {
     let sprintSavings = props.savingsAmounts.perSprint
     let yearSavings = props.savingsAmounts.perYear
-    let suggestedPlan = "Team"
 
     return (
         <div className="savings-column">
